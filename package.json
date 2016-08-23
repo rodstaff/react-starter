@@ -6,7 +6,7 @@
   "scripts": {
     "dev":  "webpack-dev-server --progress --colors --config ./dev.config.js"
   },
-  "author": "",
+  "author": "Radu Brehar(original)/rodk",
   "license": "ISC",
   "dependencies": {
     "react": "^15.3.1",

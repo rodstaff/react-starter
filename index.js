@@ -2,12 +2,24 @@ import React from 'react'
 import {render} from 'react-dom'
 
 class App extends React.Component {
-  render(){
-  	return <div>
-  	  Hello React how are you
-  	  the quick brown fox jumps over the lazy dog
-  	</div>
-  }
+   constructor() {
+      super();
+      this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
+   };
+
+   forceUpdateHandler() {
+      this.forceUpdate();
+   };
+
+   render() {
+      return (
+         <div>
+            <button onClick = {this.forceUpdateHandler}>FORCE UPDATE</button>
+            <h4>Random number: {Math.random()}</h4>
+         </div>
+      );
+   }
 }
 
 render(<App />, document.getElementById('content'))
+
