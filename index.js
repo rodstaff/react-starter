@@ -1,25 +1,49 @@
 import React from 'react'
 import {render} from 'react-dom'
 
-class App extends React.Component {
-   constructor() {
-      super();
-      this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
-   };
+      var rce = React.createElement,
+          rcc = React.createClass
 
-   forceUpdateHandler() {
-      this.forceUpdate();
-   };
+      var contacts = [
+        {key: 1, name: "Frank Sinatra", email: "frank@franksinatra.com", description: "Front-end Honcho"},
+        {key: 2, name: "Joe Dimaggio", email: "joe@joedimaggio.com", description:  "Better Batter"},
+        {key: 3, name: "John McCenna", email: "john@johnmcenna.com"},
+        {key: 5, name: "Ted Selena", description:  "unknown"}
+      ]
 
-   render() {
-      return (
-         <div>
-            <button onClick = {this.forceUpdateHandler}>FORCE UPDATE</button>
-            <h4>Random number: {Math.random()}</h4>
-         </div>
-      );
-   }
-}
+      var ContactItem = rcc({
+        propTypes: {
+          name: React.PropTypes.string.isRequired,
+          email: React.PropTypes.string.isRequired,
+          description: React.PropTypes.string,
+        },
 
-render(<App />, document.getElementById('content'))
+        render: function() {
+    // I wrap mult-line return statements in parentheses to avoid the
+    // inevitable bugs caused by forgetting that JavaScript will throw away
+    // the final lines when possible. The parentheses are not strictly
+    // necessary.  (Comments by JamesKNelson)
+          return (
+            rce('li', {},
+              rce('h2', {}, this.props.name),
+              rce('a', {href: 'mailto:'+this.props.email}, this.props.email),
+              rce('div', {}, this.props.description)
+            )
+          )
+        }
+      })
+
+      var contactItemElements = contacts
+        .filter(function(contact) { return contact.email })
+        .map(function(contact) { return rce(ContactItem, contact) })
+
+      var rootElement =
+        rce('div', {}, 
+          rce('h1', {}, "List of Famous Persons?"),
+          rce('ul', {}, contactItemElements)
+        )
+
+      render(rootElement, document.getElementById('content'))
+
+
 
