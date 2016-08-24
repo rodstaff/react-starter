@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":  "webpack-dev-server --progress --colors --config ./dev.config.js"
+    "dev":  "webpack-dev-server --progress --colors --config ./webpack.config.js"
   },
-  "author": "Radu Brehar(original)/rodk",
+  "author": "Radu Brehar(original)/rodk(modified)",
   "license": "ISC",
   "dependencies": {
     "react": "^15.3.1",
