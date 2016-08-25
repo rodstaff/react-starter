@@ -1,8 +1,9 @@
-#react-starter
+#react-starter = "ToDo App"
 Ref:  Youtube="Getting started with React development", by Radu Brehar
+Ref:  Youtube="React Tutorial (with Webpack + ES6)", by Michael Cheng
 
 This app uses Webpack to generate a bundled JavaScript file that the browser can read.
 
-(Note: There is a small error in the youtube tutorial that, if not corrected, will prevent the app from working.  Look at the 'dev.config.js' file carefully.)
+Each tutorial needed some tweaking in order for it to work and by combining both created a Todo App.
 
 To run on terminal in the app directory:  '$ npm run dev'
