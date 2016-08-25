@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --progress --colors --config ./webpack.config.js"
   },
-  "author": "Radu Brehar + Michael Cheng/rodk(modified)",
+  "author": "rodk",
   "license": "ISC",
   "dependencies": {
     "lodash": "^4.15.0",
