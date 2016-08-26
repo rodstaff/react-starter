@@ -8,6 +8,21 @@ export default class TodosListItem extends React.Component {
       isEditing: false
     };
   }
+  renderTaskSection() {
+    const { task, isCompleted } = this.props;
+    const taskStyle = {
+      color: isCompleted ? 'green' : 'red',
+      cursor: 'pointer'
+    };
+
+    return (
+      <td style={taskStyle}
+        onClick={this.props.toggleTask.bind(this, task)}
+      >
+        {task}
+      </td>
+    );
+  }
   renderActionsSection() {
     if (this.state.isEditing) {
       return (
@@ -26,7 +41,7 @@ export default class TodosListItem extends React.Component {
   render () {
   	return (
         <tr>
-          <td>{this.props.task}</td>
+            {this.renderTaskSection()}
             {this.renderActionsSection()}
         </tr>
   	);
