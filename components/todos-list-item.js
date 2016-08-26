@@ -23,7 +23,6 @@ export default class TodosListItem extends React.Component {
         </td>
       );
   }
-
   render () {
   	return (
         <tr>

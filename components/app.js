@@ -12,7 +12,6 @@ const todos = [
   	isCompleted:  true
   }
 ];
-
 export default class App extends React.Component {
   constructor(props) {
   	super(props);
@@ -21,7 +20,6 @@ export default class App extends React.Component {
       todos
   	};
   }
-
   render () {
   	return (
       <div>
