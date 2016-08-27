@@ -5,9 +5,13 @@ module.exports = {
   module: {
   	loaders: [
       {
-      	loader:  'babel-loader', 
       	test: /\.js$/,
-      	exclude: /node_modules/
+      	exclude: /node_modules/,
+        loader:  'babel-loader'
+        // query: {
+        //   presets: ['react', 'es2015'],
+        //   plugins: 'react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy']
+        // }
       }
   	]
   },
@@ -20,6 +24,6 @@ module.exports = {
   	publicPath: '/',   
   	filename: 'bundle.js',  // located here => 'localhost:<port>/bundle.js'
   	host: '0.0.0.0',
-  	port: 8088
+  	port: 8081
   }
 }
