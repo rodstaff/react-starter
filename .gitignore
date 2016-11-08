@@ -1,1 +1,4 @@
 node_modules/
+indexCpy.js
+npm-debug.log
+.DS_Store
